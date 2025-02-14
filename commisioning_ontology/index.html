@@ -380,6 +380,12 @@ td {
                       <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
                     </span>
                   </li>
+                  <li>
+                    <span>
+                      <a href="#elementEntityType">entityType</a>
+                      <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
+                    </span>
+                  </li>
                 </ul>
               </td>
             </tr>
@@ -451,6 +457,12 @@ td {
                   </li>
                   <li>
                     <span>
+                      <a href="#pendencyEntityType">entityType</a>
+                      <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
                       <a href="#pendencyDescription">pendency_Description</a>
                       <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
                     </span>
@@ -476,12 +488,6 @@ td {
                   <li>
                     <span>
                       <a href="#pendencyProjectId">pendency_Project_Id</a>
-                      <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <a href="#pendencyContractId">pendency_Contract_Id</a>
                       <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
                     </span>
                   </li>
@@ -517,12 +523,6 @@ td {
                   </li>
                   <li>
                     <span>
-                      <a href="#pendencyTimelineURL">pendency_Timeline_URL</a>
-                      <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
                       <a href="#pendencyHasElementAssociated">pendency_Has_Element_Associated</a>
                       <sup class="sup-op" title="OWL Object Property">op</sup>
                     </span>
@@ -530,12 +530,6 @@ td {
                   <li>
                     <span>
                       <a href="#pendencyHasTaskAssociated">pendency_Has_Task_Associated</a>
-                      <sup class="sup-op" title="OWL Object Property">op</sup>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <a href="#pendencyHasEventAssociated">pendency_Has_Event_Associated</a>
                       <sup class="sup-op" title="OWL Object Property">op</sup>
                     </span>
                   </li>
@@ -1066,19 +1060,13 @@ td {
                   </li>
                   <li>
                     <span>
-                      <a href="#stepType">step_Type</a>
+                      <a href="#stepEntityType">entityType</a>
                       <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
                     </span>
                   </li>
                   <li>
                     <span>
                       <a href="#hasDigitalProcessInstance">step_Has_Digital_Process_Instance</a>
-                      <sup class="sup-op" title="OWL Object Property">op</sup>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <a href="#hasActivityAssociated">step_Has_Activity_Associated</a>
                       <sup class="sup-op" title="OWL Object Property">op</sup>
                     </span>
                   </li>
@@ -1117,7 +1105,7 @@ td {
                   </li>
                   <li>
                     <span>
-                      <a href="#hasStepAssociated">dpi_Has_Step_Associated</a>
+                      <a href="#hasStepAssociated">activity_Has_Step_Associated</a>
                       <sup class="sup-op" title="OWL Object Property">op</sup>
                     </span>
                   </li>
@@ -1165,6 +1153,12 @@ td {
                   </li>
                   <li>
                     <span>
+                      <a href="#taskEntityType">entityType</a>
+                      <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
                       <a href="#taskDescription">task_Description</a>
                       <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
                     </span>
@@ -1195,7 +1189,7 @@ td {
                   </li>
                   <li>
                     <span>
-                      <a href="#associatedActivity">task_Associated_Activity</a>
+                      <a href="#hasActivityAssociated">task_Associated_Activity</a>
                       <sup class="sup-op" title="OWL Object Property">op</sup>
                     </span>
                   </li>
@@ -1237,20 +1231,10 @@ td {
                 <a class="hover_property" href="https://w3id.org/profile/ontdoc/inRangeOf" title="Inverse of rdfs:range. Defined in Ontology Documentation Profile">In Range Of</a>
               </th>
               <td>
-                <ul>
-                  <li>
-                    <span>
-                      <a href="#pendencyHasTaskAssociated">pendency_Has_Task_Associated</a>
-                      <sup class="sup-op" title="OWL Object Property">op</sup>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <a href="#hasTaskAssociated">activity_Has_Task_Associated</a>
-                      <sup class="sup-op" title="OWL Object Property">op</sup>
-                    </span>
-                  </li>
-                </ul>
+                <span>
+                  <a href="#pendencyHasTaskAssociated">pendency_Has_Task_Associated</a>
+                  <sup class="sup-op" title="OWL Object Property">op</sup>
+                </span>
               </td>
             </tr>
           </table>
@@ -1546,6 +1530,18 @@ td {
                   </li>
                   <li>
                     <span>
+                      <a href="#dpiEntityType">entityType</a>
+                      <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="#dpiDescription">dpi_Description</a>
+                      <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
                       <a href="#dpiStatus">dpi_Status</a>
                       <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
                     </span>
@@ -1565,12 +1561,6 @@ td {
                   <li>
                     <span>
                       <a href="#hasClass">dpi_Has_Class</a>
-                      <sup class="sup-op" title="OWL Object Property">op</sup>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <a href="#hasStepAssociated">dpi_Has_Step_Associated</a>
                       <sup class="sup-op" title="OWL Object Property">op</sup>
                     </span>
                   </li>
@@ -1737,6 +1727,12 @@ td {
                   </li>
                   <li>
                     <span>
+                      <a href="#activityEntityType">entityType</a>
+                      <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
                       <a href="#activityDescription">activity_Description</a>
                       <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
                     </span>
@@ -1767,25 +1763,13 @@ td {
                   </li>
                   <li>
                     <span>
-                      <a href="#activityResponsibleActor">activity_Responsible_Actor</a>
-                      <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <a href="#activityProjectId">activity_Project_ID</a>
-                      <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
                       <a href="#hasElementAssociated">dpi_Has_Element_Associated</a>
                       <sup class="sup-op" title="OWL Object Property">op</sup>
                     </span>
                   </li>
                   <li>
                     <span>
-                      <a href="#hasTaskAssociated">activity_Has_Task_Associated</a>
+                      <a href="#hasStepAssociated">activity_Has_Step_Associated</a>
                       <sup class="sup-op" title="OWL Object Property">op</sup>
                     </span>
                   </li>
@@ -1803,17 +1787,53 @@ td {
                 <a class="hover_property" href="https://w3id.org/profile/ontdoc/inRangeOf" title="Inverse of rdfs:range. Defined in Ontology Documentation Profile">In Range Of</a>
               </th>
               <td>
+                <span>
+                  <a href="#hasActivityAssociated">task_Associated_Activity</a>
+                  <sup class="sup-op" title="OWL Object Property">op</sup>
+                </span>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="activity_DocumentType">
+          <h3>activity_DocumentType
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://example.com/certi/commissioning#DocumentType</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+              </th>
+              <td><p>Activity DocumentType</p></td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="https://w3id.org/profile/ontdoc/inDomainOf" title="Inverse of rdfs:domain. Defined in Ontology Documentation Profile">In Domain Of</a>
+              </th>
+              <td>
                 <ul>
                   <li>
                     <span>
-                      <a href="#hasActivityAssociated">step_Has_Activity_Associated</a>
-                      <sup class="sup-op" title="OWL Object Property">op</sup>
+                      <a href="#documentTypeIdentification">activity_DocumentType_Identification</a>
+                      <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
                     </span>
                   </li>
                   <li>
                     <span>
-                      <a href="#associatedActivity">task_Associated_Activity</a>
-                      <sup class="sup-op" title="OWL Object Property">op</sup>
+                      <a href="#documentTypeName">activity_DocumentType_Name</a>
+                      <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="#documentTypeDescription">activity_DocumentType_Description</a>
+                      <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
                     </span>
                   </li>
                 </ul>
@@ -1969,44 +1989,6 @@ td {
             </tr>
           </table>
         </div>
-        <div class="property entity" id="pendencyHasEventAssociated">
-          <h3>pendency_Has_Event_Associated
-            <sup class="sup-op" title="OWL Object Property">op</sup>
-          </h3>
-          <table>
-            <tr>
-              <th>IRI</th>
-              <td>
-                <code>http://example.com/certi/commissioning#pendencyHasEventAssociated</code>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
-              </th>
-              <td></td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
-              </th>
-              <td>
-                <span>
-                  <a href="#Pendency">Pendency</a>
-                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                </span>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
-              </th>
-              <td>
-                <a href="#Event">commissioning:Event</a>
-              </td>
-            </tr>
-          </table>
-        </div>
         <div class="property entity" id="hasDigitalProcessInstance">
           <h3>step_Has_Digital_Process_Instance
             <sup class="sup-op" title="OWL Object Property">op</sup>
@@ -2042,47 +2024,6 @@ td {
               <td>
                 <span>
                   <a href="#Digital_Process_Instance">Digital_Process_Instance</a>
-                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                </span>
-              </td>
-            </tr>
-          </table>
-        </div>
-        <div class="property entity" id="hasActivityAssociated">
-          <h3>step_Has_Activity_Associated
-            <sup class="sup-op" title="OWL Object Property">op</sup>
-          </h3>
-          <table>
-            <tr>
-              <th>IRI</th>
-              <td>
-                <code>http://example.com/certi/commissioning#hasActivityAssociated</code>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
-              </th>
-              <td><p>Links the step to its associated activities.</p></td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
-              </th>
-              <td>
-                <span>
-                  <a href="#Step">Step</a>
-                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                </span>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
-              </th>
-              <td>
-                <span>
-                  <a href="#Activity">Activity</a>
                   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                 </span>
               </td>
@@ -2171,7 +2112,7 @@ td {
             </tr>
           </table>
         </div>
-        <div class="property entity" id="associatedActivity">
+        <div class="property entity" id="hasActivityAssociated">
           <h3>task_Associated_Activity
             <sup class="sup-op" title="OWL Object Property">op</sup>
           </h3>
@@ -2179,7 +2120,7 @@ td {
             <tr>
               <th>IRI</th>
               <td>
-                <code>http://example.com/certi/commissioning#associatedActivity</code>
+                <code>http://example.com/certi/commissioning#hasActivityAssociated</code>
               </td>
             </tr>
             <tr>
@@ -2499,47 +2440,6 @@ td {
             </tr>
           </table>
         </div>
-        <div class="property entity" id="hasStepAssociated">
-          <h3>dpi_Has_Step_Associated
-            <sup class="sup-op" title="OWL Object Property">op</sup>
-          </h3>
-          <table>
-            <tr>
-              <th>IRI</th>
-              <td>
-                <code>http://example.com/certi/commissioning#hasStepAssociated</code>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
-              </th>
-              <td><p>Links the digital process instance to associated steps.</p></td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
-              </th>
-              <td>
-                <span>
-                  <a href="#Digital_Process_Instance">Digital_Process_Instance</a>
-                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                </span>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
-              </th>
-              <td>
-                <span>
-                  <a href="#Step">Step</a>
-                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                </span>
-              </td>
-            </tr>
-          </table>
-        </div>
         <div class="property entity" id="hasElementAssociated">
           <h3>dpi_Has_Element_Associatedactivity_Has_Element_Associated
             <sup class="sup-op" title="OWL Object Property">op</sup>
@@ -2596,22 +2496,22 @@ td {
             </tr>
           </table>
         </div>
-        <div class="property entity" id="hasTaskAssociated">
-          <h3>activity_Has_Task_Associated
+        <div class="property entity" id="hasStepAssociated">
+          <h3>activity_Has_Step_Associated
             <sup class="sup-op" title="OWL Object Property">op</sup>
           </h3>
           <table>
             <tr>
               <th>IRI</th>
               <td>
-                <code>http://example.com/certi/commissioning#hasTaskAssociated</code>
+                <code>http://example.com/certi/commissioning#hasStepAssociated</code>
               </td>
             </tr>
             <tr>
               <th>
                 <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
               </th>
-              <td><p>Links the activity to associated tasks.</p></td>
+              <td><p>Links the activity to associated steps.</p></td>
             </tr>
             <tr>
               <th>
@@ -2630,7 +2530,7 @@ td {
               </th>
               <td>
                 <span>
-                  <a href="#Task">Task</a>
+                  <a href="#Step">Step</a>
                   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                 </span>
               </td>
@@ -2795,6 +2695,44 @@ td {
             </tr>
           </table>
         </div>
+        <div class="property entity" id="elementEntityType">
+          <h3>entityType
+            <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://example.com/certi/commissioning#elementEntityType</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+              </th>
+              <td><p>The entity type</p></td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
+              </th>
+              <td>
+                <span>
+                  <a href="#Element">Element</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
+              </th>
+              <td>
+                <a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a>
+              </td>
+            </tr>
+          </table>
+        </div>
         <div class="property entity" id="pendencyName">
           <h3>pendency_Name
             <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
@@ -2811,6 +2749,44 @@ td {
                 <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
               </th>
               <td><p>The name of the pendency.</p></td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
+              </th>
+              <td>
+                <span>
+                  <a href="#Pendency">Pendency</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
+              </th>
+              <td>
+                <a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="pendencyEntityType">
+          <h3>entityType
+            <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://example.com/certi/commissioning#pendencyEntityType</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+              </th>
+              <td><p>The entity type</p></td>
             </tr>
             <tr>
               <th>
@@ -3004,44 +2980,6 @@ td {
                 <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
               </th>
               <td><p>Unique identifier for the project, providing a clear reference to the specific project within a system or workflow. This helps in tracking, organizing, and associating tasks, resources, and data with the correct project.</p></td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
-              </th>
-              <td>
-                <span>
-                  <a href="#Pendency">Pendency</a>
-                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                </span>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
-              </th>
-              <td>
-                <a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a>
-              </td>
-            </tr>
-          </table>
-        </div>
-        <div class="property entity" id="pendencyContractId">
-          <h3>pendency_Contract_Id
-            <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
-          </h3>
-          <table>
-            <tr>
-              <th>IRI</th>
-              <td>
-                <code>http://example.com/certi/commissioning#pendencyContractId</code>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
-              </th>
-              <td><p>Unique identifier for the contract associated with the work, providing a reference for the terms, conditions, and obligations that govern the activity. It ensures traceability and compliance with the agreed contractual framework.</p></td>
             </tr>
             <tr>
               <th>
@@ -3260,44 +3198,6 @@ td {
             </tr>
           </table>
         </div>
-        <div class="property entity" id="pendencyTimelineURL">
-          <h3>pendency_Timeline_URL
-            <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
-          </h3>
-          <table>
-            <tr>
-              <th>IRI</th>
-              <td>
-                <code>http://example.com/certi/commissioning#pendencyTimelineURL</code>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
-              </th>
-              <td><p>URL providing access to a timeline of events and records, offering a chronological view of related activities. This link enables users to track and review the history and progress associated with specific items within the system.</p></td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
-              </th>
-              <td>
-                <span>
-                  <a href="#Pendency">Pendency</a>
-                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                </span>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
-              </th>
-              <td>
-                <a href="http://www.w3.org/2001/XMLSchema#anyURI">xsd:anyURI</a>
-              </td>
-            </tr>
-          </table>
-        </div>
         <div class="property entity" id="stepName">
           <h3>step_Name
             <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
@@ -3374,22 +3274,22 @@ td {
             </tr>
           </table>
         </div>
-        <div class="property entity" id="stepType">
-          <h3>step_Type
+        <div class="property entity" id="stepEntityType">
+          <h3>entityType
             <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
           </h3>
           <table>
             <tr>
               <th>IRI</th>
               <td>
-                <code>http://example.com/certi/commissioning#stepType</code>
+                <code>http://example.com/certi/commissioning#stepEntityType</code>
               </td>
             </tr>
             <tr>
               <th>
                 <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
               </th>
-              <td><p>The type or category of the step.</p></td>
+              <td><p>The entity type</p></td>
             </tr>
             <tr>
               <th>
@@ -3428,6 +3328,44 @@ td {
                 <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
               </th>
               <td><p>The name of the task.</p></td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
+              </th>
+              <td>
+                <span>
+                  <a href="#Task">Task</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
+              </th>
+              <td>
+                <a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="taskEntityType">
+          <h3>entityType
+            <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://example.com/certi/commissioning#taskEntityType</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+              </th>
+              <td><p>The entity type</p></td>
             </tr>
             <tr>
               <th>
@@ -4286,6 +4224,82 @@ td {
             </tr>
           </table>
         </div>
+        <div class="property entity" id="dpiEntityType">
+          <h3>entityType
+            <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://example.com/certi/commissioning#dpiEntityType</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+              </th>
+              <td><p>The entity type</p></td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
+              </th>
+              <td>
+                <span>
+                  <a href="#Digital_Process_Instance">Digital_Process_Instance</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
+              </th>
+              <td>
+                <a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="dpiDescription">
+          <h3>dpi_Description
+            <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://example.com/certi/commissioning#dpiDescription</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+              </th>
+              <td><p>The description of the digital process instance.</p></td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
+              </th>
+              <td>
+                <span>
+                  <a href="#Digital_Process_Instance">Digital_Process_Instance</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
+              </th>
+              <td>
+                <a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a>
+              </td>
+            </tr>
+          </table>
+        </div>
         <div class="property entity" id="dpiStatus">
           <h3>dpi_Status
             <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
@@ -4357,7 +4371,7 @@ td {
                 <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
               </th>
               <td>
-                <a href="http://www.w3.org/2001/XMLSchema#dateTime">xsd:dateTime</a>
+                <a href="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD1/OWL#IfcTimeStamp">ifc:IfcTimeStamp</a>
               </td>
             </tr>
           </table>
@@ -4530,6 +4544,44 @@ td {
                 <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
               </th>
               <td><p>The name of the activity.</p></td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
+              </th>
+              <td>
+                <span>
+                  <a href="#Activity">Activity</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
+              </th>
+              <td>
+                <a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="activityEntityType">
+          <h3>entityType
+            <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://example.com/certi/commissioning#activityEntityType</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+              </th>
+              <td><p>The entity type</p></td>
             </tr>
             <tr>
               <th>
@@ -4742,22 +4794,22 @@ td {
             </tr>
           </table>
         </div>
-        <div class="property entity" id="activityResponsibleActor">
-          <h3>activity_Responsible_Actor
+        <div class="property entity" id="documentTypeIdentification">
+          <h3>activity_DocumentType_Identification
             <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
           </h3>
           <table>
             <tr>
               <th>IRI</th>
               <td>
-                <code>http://example.com/certi/commissioning#activityResponsibleActor</code>
+                <code>http://example.com/certi/commissioning#documentTypeIdentification</code>
               </td>
             </tr>
             <tr>
               <th>
                 <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
               </th>
-              <td><p>The actor responsible for the activity.</p></td>
+              <td></td>
             </tr>
             <tr>
               <th>
@@ -4765,7 +4817,7 @@ td {
               </th>
               <td>
                 <span>
-                  <a href="#Activity">Activity</a>
+                  <a href="#activity_DocumentType">activity_DocumentType</a>
                   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                 </span>
               </td>
@@ -4780,22 +4832,22 @@ td {
             </tr>
           </table>
         </div>
-        <div class="property entity" id="activityProjectId">
-          <h3>activity_Project_ID
+        <div class="property entity" id="documentTypeName">
+          <h3>activity_DocumentType_Name
             <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
           </h3>
           <table>
             <tr>
               <th>IRI</th>
               <td>
-                <code>http://example.com/certi/commissioning#activityProjectId</code>
+                <code>http://example.com/certi/commissioning#documentTypeName</code>
               </td>
             </tr>
             <tr>
               <th>
                 <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
               </th>
-              <td><p>The ID of the project associated with the activity.</p></td>
+              <td></td>
             </tr>
             <tr>
               <th>
@@ -4803,7 +4855,45 @@ td {
               </th>
               <td>
                 <span>
-                  <a href="#Activity">Activity</a>
+                  <a href="#activity_DocumentType">activity_DocumentType</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
+              </th>
+              <td>
+                <a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="documentTypeDescription">
+          <h3>activity_DocumentType_Description
+            <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://example.com/certi/commissioning#documentTypeDescription</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+              </th>
+              <td></td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
+              </th>
+              <td>
+                <span>
+                  <a href="#activity_DocumentType">activity_DocumentType</a>
                   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                 </span>
               </td>
@@ -5126,6 +5216,9 @@ td {
               <a href="#Activity">Activity</a>
             </li>
             <li>
+              <a href="#activity_DocumentType">activity_DocumentType</a>
+            </li>
+            <li>
               <a href="#activity_Commentary">activity_Commentary</a>
             </li>
           </ul>
@@ -5142,13 +5235,7 @@ td {
               <a href="#pendencyHasTaskAssociated">pendency_Has_Task_Associated</a>
             </li>
             <li>
-              <a href="#pendencyHasEventAssociated">pendency_Has_Event_Associated</a>
-            </li>
-            <li>
               <a href="#hasDigitalProcessInstance">step_Has_Digital_Process_Instance</a>
-            </li>
-            <li>
-              <a href="#hasActivityAssociated">step_Has_Activity_Associated</a>
             </li>
             <li>
               <a href="#hasStepPredecessor">step_Has_Step_Predecessor</a>
@@ -5157,7 +5244,7 @@ td {
               <a href="#hasStepSuccessor">step_Has_Step_Successor</a>
             </li>
             <li>
-              <a href="#associatedActivity">task_Associated_Activity</a>
+              <a href="#hasActivityAssociated">task_Associated_Activity</a>
             </li>
             <li>
               <a href="#hasStatus">task_Has_Status</a>
@@ -5181,13 +5268,10 @@ td {
               <a href="#hasClass">dpi_Has_Class</a>
             </li>
             <li>
-              <a href="#hasStepAssociated">dpi_Has_Step_Associated</a>
-            </li>
-            <li>
               <a href="#hasElementAssociated">dpi_Has_Element_Associatedactivity_Has_Element_Associated</a>
             </li>
             <li>
-              <a href="#hasTaskAssociated">activity_Has_Task_Associated</a>
+              <a href="#hasStepAssociated">activity_Has_Step_Associated</a>
             </li>
             <li>
               <a href="#hasCommentary">activity_Has_Commentary</a>
@@ -5209,7 +5293,13 @@ td {
               <a href="#elementType">element_Type</a>
             </li>
             <li>
+              <a href="#elementEntityType">entityType</a>
+            </li>
+            <li>
               <a href="#pendencyName">pendency_Name</a>
+            </li>
+            <li>
+              <a href="#pendencyEntityType">entityType</a>
             </li>
             <li>
               <a href="#pendencyDescription">pendency_Description</a>
@@ -5227,9 +5317,6 @@ td {
               <a href="#pendencyProjectId">pendency_Project_Id</a>
             </li>
             <li>
-              <a href="#pendencyContractId">pendency_Contract_Id</a>
-            </li>
-            <li>
               <a href="#pendencyStatus">pendency_Status</a>
             </li>
             <li>
@@ -5245,19 +5332,19 @@ td {
               <a href="#pendencyUpdateDate">pendency_Update_Timestamp</a>
             </li>
             <li>
-              <a href="#pendencyTimelineURL">pendency_Timeline_URL</a>
-            </li>
-            <li>
               <a href="#stepName">step_Name</a>
             </li>
             <li>
               <a href="#stepDescription">step_Description</a>
             </li>
             <li>
-              <a href="#stepType">step_Type</a>
+              <a href="#stepEntityType">entityType</a>
             </li>
             <li>
               <a href="#taskName">task_Name</a>
+            </li>
+            <li>
+              <a href="#taskEntityType">entityType</a>
             </li>
             <li>
               <a href="#taskDescription">task_Description</a>
@@ -5326,6 +5413,12 @@ td {
               <a href="#dpiName">dpi_Name</a>
             </li>
             <li>
+              <a href="#dpiEntityType">entityType</a>
+            </li>
+            <li>
+              <a href="#dpiDescription">dpi_Description</a>
+            </li>
+            <li>
               <a href="#dpiStatus">dpi_Status</a>
             </li>
             <li>
@@ -5347,6 +5440,9 @@ td {
               <a href="#activityName">activity_Name</a>
             </li>
             <li>
+              <a href="#activityEntityType">entityType</a>
+            </li>
+            <li>
               <a href="#activityDescription">activity_Description</a>
             </li>
             <li>
@@ -5362,10 +5458,13 @@ td {
               <a href="#activityResponsibleGroup">activity_Responsible_Group</a>
             </li>
             <li>
-              <a href="#activityResponsibleActor">activity_Responsible_Actor</a>
+              <a href="#documentTypeIdentification">activity_DocumentType_Identification</a>
             </li>
             <li>
-              <a href="#activityProjectId">activity_Project_ID</a>
+              <a href="#documentTypeName">activity_DocumentType_Name</a>
+            </li>
+            <li>
+              <a href="#documentTypeDescription">activity_DocumentType_Description</a>
             </li>
             <li>
               <a href="#commentaryCreatorId">activity_Commentary_Creator_ID</a>
