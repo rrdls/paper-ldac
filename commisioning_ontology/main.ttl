@@ -1,0 +1,798 @@
+@prefix commissioning: <http://example.com/certi/commissioning#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix ifc: <https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD1/OWL#> .
+@prefix bssd: <https://identifier.buildingsmart.org/uri/buildingsmart/ifc/4.3/class/IfcEvent#> .
+
+
+
+commissioning: a owl:Ontology ;
+    rdfs:label "Commissioning Ontology" ;
+    rdfs:comment "An Ontology for the Representation of Digital Commissioning Processes" .
+
+
+commissioning:Element 
+    a owl:Class ;
+    rdfs:label "Element" ;
+    rdfs:comment "" ;
+    rdfs:subClassOf ifc:IfcBuiltElement ;
+    rdfs:seeAlso <https://identifier.buildingsmart.org/uri/buildingsmart/ifc/4.3/class/IfcBuiltElement> .
+
+commissioning:elementName
+    a owl:DatatypeProperty ;
+    rdfs:domain commissioning:Element ;
+    rdfs:range xsd:string ;
+    rdfs:label "element_Name" ;
+    rdfs:comment "The element name." .
+
+commissioning:elementDescription
+    a owl:DatatypeProperty ;
+    rdfs:domain commissioning:Element ;
+    rdfs:range xsd:string ;
+    rdfs:label "element_Description" ;
+    rdfs:comment "The element description." .
+
+commissioning:elementType
+    a owl:DatatypeProperty ;
+    rdfs:domain commissioning:Element ;
+    rdfs:range xsd:string ;
+    rdfs:label "element_Type" ;
+    rdfs:comment "A element type." .
+
+commissioning:elementEntityType
+    a owl:DatatypeProperty ;
+    rdfs:domain commissioning:Element ;
+    rdfs:range xsd:string ;
+    rdfs:label "entityType" ;
+    rdfs:comment "The entity type" .
+
+
+
+
+commissioning:Pendency 
+    a owl:Class ;
+    rdfs:label "Pendency" ;
+    rdfs:comment "An identified issue, defect, or non-conformity that arises during inspections, testing, or commissioning. It represents a task or action that needs to be addressed before the project can be considered complete. Pendency items are typically documented, tracked, and resolved to ensure compliance with design specifications, safety standards, and operational requirements. They are essential for quality assurance and help to guarantee that any outstanding matters are rectified before final handover." ;
+    rdfs:subClassOf ifc:IfcEvent ;
+    rdfs:seeAlso <https://identifier.buildingsmart.org/uri/buildingsmart/ifc/4.3/class/IfcEvent> .
+
+
+commissioning:PendencyResolutionSystem
+    a owl:Class ;
+    rdfs:label "pendency_Resolution_System" ;
+    rdfs:comment "Possible types of a pendency." .
+
+
+commissioning:Internal
+    a owl:Class ;
+    rdfs:subClassOf commissioning:PendencyResolutionSystem ;
+    rdfs:label "prs_Internal"@en ;
+    rdfs:comment "The pendency resolution process will be internal." .
+
+
+commissioning:External
+    a owl:Class ;
+    rdfs:subClassOf commissioning:PendencyResolutionSystem ;
+    rdfs:label "prs_External"@en ;
+    rdfs:comment "The pendency resolution process will be external." .
+
+
+commissioning:PendencyType
+    a owl:Class ;
+    rdfs:label "pendency_Type"@en ;
+    rdfs:comment "Enumeration of possible types of pendencies in the commissioning process."@en .
+
+commissioning:TypeA
+    a owl:Class ;
+    rdfs:subClassOf commissioning:PendencyType ;
+    rdfs:label "pendency_Type_A"@en ;
+    rdfs:comment "Prevents the subsystem or system from being pre-commissioned, commissioned, or energized."@en .
+
+commissioning:TypeB
+    a owl:Class ;
+    rdfs:subClassOf commissioning:PendencyType ;
+    rdfs:label "pendency_Type_B"@en ;
+    rdfs:comment "Does not prevent the safe operation of the equipment."@en .
+
+
+
+
+
+commissioning:PendencyStatus
+    a owl:Class ;
+    rdfs:label "pendency_Status" ;
+    rdfs:comment "Possible status of a pendency." .
+
+
+commissioning:AWAITING_EVALUATION
+    a owl:Class ;
+    rdfs:subClassOf commissioning:PendencyStatus ;
+    rdfs:label "ps_Awaiting_Evaluation" ;
+    rdfs:comment "Indicates that the pendency is awaiting evaluation." .
+
+commissioning:AWAITING_INFORMATION
+    a owl:Class ;
+    rdfs:subClassOf commissioning:PendencyStatus ;
+    rdfs:label "ps_Awaiting_Information" ;
+    rdfs:comment "Indicates that the pendency is awaiting additional information." .
+
+commissioning:DRAFT
+    a owl:Class ;
+    rdfs:subClassOf commissioning:PendencyStatus ;
+    rdfs:label "ps_Draft" ;
+    rdfs:comment "Indicates that the pendency is still in draft form." .
+
+commissioning:IN_PROGRESS
+    a owl:Class ;
+    rdfs:subClassOf commissioning:PendencyStatus ;
+    rdfs:label "ps_In_Progress" ;
+    rdfs:comment "Indicates that the pendency is in progress." .
+
+commissioning:COMPLETED
+    a owl:Class ;
+    rdfs:subClassOf commissioning:PendencyStatus ;
+    rdfs:label "ps_Completed" ;
+    rdfs:comment "Indicates that the pendency has been completed." .
+
+commissioning:CANCELLED
+    a owl:Class ;
+    rdfs:subClassOf commissioning:PendencyStatus ;
+    rdfs:label "ps_Cancelled" ;
+    rdfs:comment "Indicates that the pendency has been cancelled." .
+
+
+
+commissioning:pendencyName
+    a owl:DatatypeProperty ;
+    rdfs:domain commissioning:Pendency ;
+    rdfs:range xsd:string ;
+    rdfs:label "pendency_Name" ;
+    rdfs:comment "The name of the pendency." .
+
+commissioning:pendencyEntityType
+    a owl:DatatypeProperty ;
+    rdfs:domain commissioning:Pendency ;
+    rdfs:range xsd:string ;
+    rdfs:label "entityType" ;
+    rdfs:comment "The entity type" .
+
+commissioning:pendencyDescription
+    a owl:DatatypeProperty ;
+    rdfs:domain commissioning:Pendency ;
+    rdfs:range xsd:string ;
+    rdfs:label "pendency_Description" ;
+    rdfs:comment "A description of the pendency." .
+
+
+commissioning:pendencyResponsiblePerson
+    a owl:DatatypeProperty ;
+    rdfs:domain commissioning:Pendency ;
+    rdfs:range xsd:string ;
+    rdfs:label "pendency_Responsible_Person" ;
+    rdfs:comment "Links a pendency to the user responsible for resolving it." .
+
+commissioning:pendencyResolutionSystem
+    a owl:DatatypeProperty ;
+    rdfs:domain commissioning:Pendency ;
+    rdfs:range commissioning:PendencyResolutionSystem ;
+    rdfs:label "pendency_Resolution_System" ;
+    rdfs:comment "Name of the system or software where the resolution or final action related to the record is logged. This provides clarity on where the outcome or completion of the record is documented, particularly for records like punch items that require resolution." .
+
+commissioning:pendencyPublicId
+    a owl:DatatypeProperty ;
+    rdfs:domain commissioning:Pendency ;
+    rdfs:range xsd:string ;
+    rdfs:label "pendency_Public_Id" ;
+    rdfs:comment "Unique identifier intended for public use, providing a reference that can be shared externally. This ensures that external parties or systems can access or reference specific information without exposing internal or sensitive identifiers." .
+    
+commissioning:pendencyProjectId
+    a owl:DatatypeProperty ;
+    rdfs:domain commissioning:Pendency ;
+    rdfs:range xsd:string ;
+    rdfs:label "pendency_Project_Id" ;
+    rdfs:comment "Unique identifier for the project, providing a clear reference to the specific project within a system or workflow. This helps in tracking, organizing, and associating tasks, resources, and data with the correct project." .
+
+
+
+commissioning:pendencyStatus
+    a owl:DatatypeProperty ;
+    rdfs:domain commissioning:Pendency ;
+    rdfs:range commissioning:PendencyStatus ;
+    rdfs:label "pendency_Status" ;
+    rdfs:comment "Current condition or phase, indicating progress or stage within the workflow. This helps track whether it is pending, in progress, completed, or requires further action." .
+
+
+commissioning:pendencyType
+    a owl:DatatypeProperty ;
+    rdfs:domain commissioning:Pendency ;
+    rdfs:range commissioning:PendencyType ;
+    rdfs:label "pendency_Type" ;
+    rdfs:comment "Category or classification, specifying the nature or kind within the system. This helps to distinguish between different purposes or functions in the workflow." .
+
+commissioning:pendencyCreationDate
+    a owl:DatatypeProperty ;
+    rdfs:domain commissioning:Pendency ;
+    rdfs:range ifc:IfcTimeStamp ;
+    rdfs:label "pendency_Creation_Timestamp" ;
+    rdfs:comment "The date when the pendency was created." .
+
+commissioning:pendencyLimitDate
+    a owl:DatatypeProperty ;
+    rdfs:domain commissioning:Pendency ;
+    rdfs:range ifc:IfcTimeStamp ;
+    rdfs:label "pendency_Limit_Timestamp" ;
+    rdfs:comment "The resolution limit date of the pendency." .
+
+commissioning:pendencyUpdateDate
+    a owl:DatatypeProperty ;
+    rdfs:domain commissioning:Pendency ;
+    rdfs:range ifc:IfcTimeStamp ;
+    rdfs:label "pendency_Update_Timestamp" ;
+    rdfs:comment "The last update date of the pendency." .
+
+
+commissioning:pendencyHasElementAssociated
+    a owl:ObjectProperty ;
+    rdfs:domain commissioning:Pendency ;
+    rdfs:range commissioning:Element ;
+    rdfs:label "pendency_Has_Element_Associated" ;
+    rdfs:comment "" .
+
+
+commissioning:pendencyHasTaskAssociated
+    a owl:ObjectProperty ;
+    rdfs:domain commissioning:Pendency ;
+    rdfs:range commissioning:Task ;
+    rdfs:label "pendency_Has_Task_Associated" ;
+    rdfs:comment "" .
+
+
+commissioning:Step 
+    a owl:Class ;
+    rdfs:label "Step" ;
+    rdfs:comment "A step represents an individual action or part of a process within a digital process instance. It can reference activities and is associated with a specific type." ;
+    rdfs:subClassOf ifc:IfcTask ;
+    rdfs:seeAlso <https://identifier.buildingsmart.org/uri/buildingsmart/ifc/4.3/class/IfcTask> .
+
+commissioning:stepName
+    a owl:DatatypeProperty ;
+    rdfs:domain commissioning:Step ;
+    rdfs:range xsd:string ;
+    rdfs:label "step_Name" ;
+    rdfs:comment "The name of the step." .
+
+commissioning:stepDescription
+    a owl:DatatypeProperty ;
+    rdfs:domain commissioning:Step ;
+    rdfs:range xsd:string ;
+    rdfs:label "step_Description" ;
+    rdfs:comment "A detailed description of the step." .
+
+commissioning:stepEntityType
+    a owl:DatatypeProperty ;
+    rdfs:domain commissioning:Step ;
+    rdfs:range xsd:string ;
+    rdfs:label "entityType" ;
+    rdfs:comment "The entity type" .
+
+commissioning:hasDigitalProcessInstance
+    a owl:ObjectProperty ;
+    rdfs:domain commissioning:Step ;
+    rdfs:range commissioning:DigitalProcessInstance ;
+    rdfs:label "step_Has_Digital_Process_Instance" ;
+    rdfs:comment "Links the step to its associated digital process instance." .
+
+
+commissioning:hasStepPredecessor
+    a owl:ObjectProperty ;
+    rdfs:domain commissioning:Step ;
+    rdfs:range commissioning:Step ;
+    rdfs:label "step_Has_Step_Predecessor" ;
+    rdfs:comment "Links the step to its predecessor step in the sequence." .
+
+commissioning:hasStepSuccessor
+    a owl:ObjectProperty ;
+    rdfs:domain commissioning:Step ;
+    rdfs:range commissioning:Step ;
+    rdfs:label "step_Has_Step_Successor" ;
+    rdfs:comment "Links the step to its successor step in the sequence." .
+
+
+
+
+
+commissioning:Task 
+    a owl:Class ;
+    rdfs:label "Task" ;
+    rdfs:comment "A task represents an actionable activity within the commissioning process. Tasks are tracked and managed for quality assurance and project completion." ;
+    rdfs:subClassOf ifc:IfcTask ;
+    rdfs:seeAlso <https://identifier.buildingsmart.org/uri/buildingsmart/ifc/4.3/class/IfcTask> .
+
+
+commissioning:taskName
+    a owl:DatatypeProperty ;
+    rdfs:domain commissioning:Task ;
+    rdfs:range xsd:string ;
+    rdfs:label "task_Name" ;
+    rdfs:comment "The name of the task." .
+
+commissioning:taskEntityType
+    a owl:DatatypeProperty ;
+    rdfs:domain commissioning:Task ;
+    rdfs:range xsd:string ;
+    rdfs:label "entityType" ;
+    rdfs:comment "The entity type" .
+
+commissioning:taskDescription
+    a owl:DatatypeProperty ;
+    rdfs:domain commissioning:Task ;
+    rdfs:range xsd:string ;
+    rdfs:label "task_Description" ;
+    rdfs:comment "A detailed description of the task." .
+
+
+commissioning:taskExecutingActor
+    a owl:DatatypeProperty ;
+    rdfs:domain commissioning:Task ;
+    rdfs:range xsd:string ;
+    rdfs:label "task_Executing_Actor" ;
+    rdfs:comment "The actor responsible for executing the task." .
+
+commissioning:taskUpdateTimestamp
+    a owl:DatatypeProperty ;
+    rdfs:domain commissioning:Task ;
+    rdfs:range ifc:IfcTimeStamp ;
+    rdfs:label "task_Update_Timestamp" ;
+    rdfs:comment "The last update timestamp for the task." .
+
+
+commissioning:TaskStatus
+    a owl:Class ;
+    rdfs:label "task_Status" ;
+    rdfs:comment "The status of the task, including details about its creator, timestamp, and content." .
+
+commissioning:statusCreatorId
+    a owl:DatatypeProperty ;
+    rdfs:domain commissioning:TaskStatus ;
+    rdfs:range xsd:string ;
+    rdfs:label "task_Creator_ID" ;
+    rdfs:comment "The identifier of the status creator." .
+
+commissioning:statusCreator
+    a owl:DatatypeProperty ;
+    rdfs:domain commissioning:TaskStatus ;
+    rdfs:range xsd:string ;
+    rdfs:label "task_Creator" ;
+    rdfs:comment "The name of the status creator." .
+
+commissioning:statusTimestamp
+    a owl:DatatypeProperty ;
+    rdfs:domain commissioning:TaskStatus ;
+    rdfs:range ifc:IfcTimeStamp ;
+    rdfs:label "task_Status_Timestamp" ;
+    rdfs:comment "The timestamp when the status was updated." .
+
+commissioning:statusContent
+    a owl:DatatypeProperty ;
+    rdfs:domain commissioning:TaskStatus ;
+    rdfs:range xsd:string ;
+    rdfs:label "task_Status_Content" ;
+    rdfs:comment "The content or details of the status." .
+
+
+commissioning:Justification
+    a owl:Class ;
+    rdfs:label "task_Justification" ;
+    rdfs:comment "A justification for the task, including details about its creator, timestamp, and content." .
+
+commissioning:justificationCreatorId
+    a owl:DatatypeProperty ;
+    rdfs:domain commissioning:Justification ;
+    rdfs:range xsd:string ;
+    rdfs:label "task_Creator_Id" ;
+    rdfs:comment "The identifier of the justification creator." .
+
+commissioning:justificationCreator
+    a owl:DatatypeProperty ;
+    rdfs:domain commissioning:Justification ;
+    rdfs:range xsd:string ;
+    rdfs:label "task_Creator" ;
+    rdfs:comment "The name of the justification creator." .
+
+commissioning:justificationTimestamp
+    a owl:DatatypeProperty ;
+    rdfs:domain commissioning:Justification ;
+    rdfs:range ifc:IfcTimeStamp ;
+    rdfs:label "task_Justification_Timestamp" ;
+    rdfs:comment "The timestamp when the justification was created." .
+
+commissioning:justificationContent
+    a owl:DatatypeProperty ;
+    rdfs:domain commissioning:Justification ;
+    rdfs:range xsd:string ;
+    rdfs:label "task_Justification_Content" ;
+    rdfs:comment "The content of the justification." .
+
+
+commissioning:Registry
+    a owl:Class ;
+    rdfs:label "task_Registry" ;
+    rdfs:comment "A registry of task actions, including details about its creator, timestamp, and content." .
+
+commissioning:registryCreatorId
+    a owl:DatatypeProperty ;
+    rdfs:domain commissioning:Registry ;
+    rdfs:range xsd:string ;
+    rdfs:label "task_Registry_Creator_Id" ;
+    rdfs:comment "The identifier of the registry creator." .
+
+commissioning:registryCreator
+    a owl:DatatypeProperty ;
+    rdfs:domain commissioning:Registry ;
+    rdfs:range xsd:string ;
+    rdfs:label "task_Registry_Creator" ;
+    rdfs:comment "The name of the registry creator." .
+
+commissioning:registryTimestamp
+    a owl:DatatypeProperty ;
+    rdfs:domain commissioning:Registry ;
+    rdfs:range ifc:IfcTimeStamp ;
+    rdfs:label "task_Registry_Timestamp" ;
+    rdfs:comment "The timestamp when the registry was created." .
+
+commissioning:registryContent
+    a owl:DatatypeProperty ;
+    rdfs:domain commissioning:Registry ;
+    rdfs:range xsd:string ;
+    rdfs:label "task_Registry_Content" ;
+    rdfs:comment "The content of the registry." .
+
+
+commissioning:Evidence
+    a owl:Class ;
+    rdfs:label "task_Evidence_" ;
+    rdfs:comment "Evidence related to the task, including details about its creator, timestamp, and content." .
+
+commissioning:evidenceCreatorId
+    a owl:DatatypeProperty ;
+    rdfs:domain commissioning:Evidence ;
+    rdfs:range xsd:string ;
+    rdfs:label "task_Evidence_Creator_Id" ;
+    rdfs:comment "The identifier of the evidence creator." .
+
+commissioning:evidenceCreator
+    a owl:DatatypeProperty ;
+    rdfs:domain commissioning:Evidence ;
+    rdfs:range xsd:string ;
+    rdfs:label "task_Evidence_Creator" ;
+    rdfs:comment "The name of the evidence creator." .
+
+commissioning:evidenceTimestamp
+    a owl:DatatypeProperty ;
+    rdfs:domain commissioning:Evidence ;
+    rdfs:range ifc:IfcTimeStamp ;
+    rdfs:label "task_Evidence_Timestamp" ;
+    rdfs:comment "The timestamp when the evidence was created." .
+
+commissioning:evidenceContent
+    a owl:DatatypeProperty ;
+    rdfs:domain commissioning:Evidence ;
+    rdfs:range xsd:string ;
+    rdfs:label "task_Evidence_Content" ;
+    rdfs:comment "The content of the evidence." .
+
+
+commissioning:elementDone
+    a owl:DatatypeProperty ;
+    rdfs:domain commissioning:Task ;
+    rdfs:range xsd:boolean ;
+    rdfs:label "task_Element_Done" ;
+    rdfs:comment "Indicates whether the element associated with the task is done." .
+
+commissioning:elementNotApplicable
+    a owl:DatatypeProperty ;
+    rdfs:domain commissioning:Task ;
+    rdfs:range xsd:boolean ;
+    rdfs:label "task_Element_Not_Applicable" ;
+    rdfs:comment "Indicates whether the element associated with the task is not applicable." .
+
+commissioning:hasActivityAssociated
+    a owl:ObjectProperty ;
+    rdfs:domain commissioning:Task ;
+    rdfs:range commissioning:Activity ;
+    rdfs:label "task_Associated_Activity" ;
+    rdfs:comment "Links the task to an associated activity." .
+
+
+
+commissioning:hasStatus
+    a owl:ObjectProperty ;
+    rdfs:domain commissioning:Task ;
+    rdfs:range commissioning:TaskStatus ;
+    rdfs:label "task_Has_Status" ;
+    rdfs:comment "Links a task to its status." .
+
+
+commissioning:hasJustification
+    a owl:ObjectProperty ;
+    rdfs:domain commissioning:Task ;
+    rdfs:range commissioning:Justification ;
+    rdfs:label "task_Has_Justification" ;
+    rdfs:comment "Links a task to its justification." .
+
+
+commissioning:hasRegistry
+    a owl:ObjectProperty ;
+    rdfs:domain commissioning:Task ;
+    rdfs:range commissioning:Registry ;
+    rdfs:label "task_Has_Registry" ;
+    rdfs:comment "Links a task to its registry." .
+
+
+commissioning:hasEvidence
+    a owl:ObjectProperty ;
+    rdfs:domain commissioning:Task ;
+    rdfs:range commissioning:Evidence ;
+    rdfs:label "task_Has_Evidence" ;
+    rdfs:comment "Links a task to its evidence." .
+
+
+commissioning:hasElement
+    a owl:ObjectProperty ;
+    rdfs:domain commissioning:Task ;
+    rdfs:range commissioning:Element ;
+    rdfs:label "task_Has_Element" ;
+    rdfs:comment "Links a task to an associated element." .
+
+
+
+
+commissioning:DigitalProcessInstance 
+    a owl:Class ;
+    rdfs:label "Digital_Process_Instance" ;
+    rdfs:comment "A digital process instance represents an executable or instantiated process within the commissioning system. It tracks the state, steps, and related elements, including related projects and classifications." ;
+    rdfs:subClassOf ifc:IfcTask ;
+    rdfs:seeAlso <https://identifier.buildingsmart.org/uri/buildingsmart/ifc/4.3/class/IfcTask> .
+
+
+commissioning:dpiName
+    a owl:DatatypeProperty ;
+    rdfs:domain commissioning:DigitalProcessInstance ;
+    rdfs:range xsd:string ;
+    rdfs:label "dpi_Name" ;
+    rdfs:comment "The name of the digital process instance." .
+
+commissioning:dpiEntityType
+    a owl:DatatypeProperty ;
+    rdfs:domain commissioning:DigitalProcessInstance ;
+    rdfs:range xsd:string ;
+    rdfs:label "entityType" ;
+    rdfs:comment "The entity type" .
+
+commissioning:dpiDescription
+    a owl:DatatypeProperty ;
+    rdfs:domain commissioning:DigitalProcessInstance ;
+    rdfs:range xsd:string ;
+    rdfs:label "dpi_Description" ;
+    rdfs:comment "The description of the digital process instance." .
+
+commissioning:dpiStatus
+    a owl:DatatypeProperty ;
+    rdfs:domain commissioning:DigitalProcessInstance ;
+    rdfs:range xsd:string ;
+    rdfs:label "dpi_Status" ;
+    rdfs:comment "The current status of the digital process instance." .
+
+commissioning:dpiCreationTime
+    a owl:DatatypeProperty ;
+    rdfs:domain commissioning:DigitalProcessInstance ;
+    rdfs:range ifc:IfcTimeStamp ;
+    rdfs:label "dpi_Creation_Time" ;
+    rdfs:comment "The timestamp representing when the digital process instance was created." .
+
+
+commissioning:DigitalProcessProject
+    a owl:Class ;
+    rdfs:label "dpi_Project" ;
+    rdfs:comment "A project specifically related to a digital process instance." .
+
+commissioning:projectName
+    a owl:DatatypeProperty ;
+    rdfs:domain commissioning:DigitalProcessProject ;
+    rdfs:range xsd:string ;
+    rdfs:label "dpi_Project_Name" ;
+    rdfs:comment "The name of the project related to the digital process instance." .
+
+commissioning:projectDescription
+    a owl:DatatypeProperty ;
+    rdfs:domain commissioning:DigitalProcessProject ;
+    rdfs:range xsd:string ;
+    rdfs:label "dpi_Project_Description" ;
+    rdfs:comment "A description of the project related to the digital process instance." .
+
+commissioning:hasProject
+    a owl:ObjectProperty ;
+    rdfs:domain commissioning:DigitalProcessInstance ;
+    rdfs:range commissioning:DigitalProcessProject ;
+    rdfs:label "dpi_Has_Project" ;
+    rdfs:comment "Links the digital process instance to its associated project." .
+
+
+commissioning:DigitalProcessClass
+    a owl:Class ;
+    rdfs:label "dpi_Class" ;
+    rdfs:comment "A classification specifically related to a digital process instance." .
+
+commissioning:className
+    a owl:DatatypeProperty ;
+    rdfs:domain commissioning:DigitalProcessClass ;
+    rdfs:range xsd:string ;
+    rdfs:label "dpi_Class_Name" ;
+    rdfs:comment "The name of the classification related to the digital process instance." .
+
+commissioning:classDescription
+    a owl:DatatypeProperty ;
+    rdfs:domain commissioning:DigitalProcessClass ;
+    rdfs:range xsd:string ;
+    rdfs:label "dpi_Class_Description" ;
+    rdfs:comment "A description of the classification related to the digital process instance." .
+
+commissioning:hasClass
+    a owl:ObjectProperty ;
+    rdfs:domain commissioning:DigitalProcessInstance ;
+    rdfs:range commissioning:DigitalProcessClass ;
+    rdfs:label "dpi_Has_Class" ;
+    rdfs:comment "Links the digital process instance to its associated classification." .
+
+
+
+
+commissioning:hasElementAssociated
+    a owl:ObjectProperty ;
+    rdfs:domain commissioning:DigitalProcessInstance ;
+    rdfs:range commissioning:Element ;
+    rdfs:label "dpi_Has_Element_Associated" ;
+    rdfs:comment "Links the digital process instance to associated elements." .
+
+
+commissioning:Activity 
+    a owl:Class ;
+    rdfs:label "Activity" ;
+    rdfs:comment "An activity represents a planned or ongoing step in the commissioning process. It involves actions, assignments, and schedules related to project completion." ;
+    rdfs:subClassOf ifc:IfcTask ;
+    rdfs:seeAlso <https://identifier.buildingsmart.org/uri/buildingsmart/ifc/4.3/class/IfcTask> .
+
+
+commissioning:activityName
+    a owl:DatatypeProperty ;
+    rdfs:domain commissioning:Activity ;
+    rdfs:range xsd:string ;
+    rdfs:label "activity_Name" ;
+    rdfs:comment "The name of the activity." .
+
+commissioning:activityEntityType
+    a owl:DatatypeProperty ;
+    rdfs:domain commissioning:Activity ;
+    rdfs:range xsd:string ;
+    rdfs:label "entityType" ;
+    rdfs:comment "The entity type" .
+
+commissioning:activityDescription
+    a owl:DatatypeProperty ;
+    rdfs:domain commissioning:Activity ;
+    rdfs:range xsd:string ;
+    rdfs:label "activity_Description" ;
+    rdfs:comment "A detailed description of the activity." .
+
+
+commissioning:activityStatus
+    a owl:DatatypeProperty ;
+    rdfs:domain commissioning:Activity ;
+    rdfs:range xsd:string ;
+    rdfs:label "activity_Status" ;
+    rdfs:comment "The current status of the activity." .
+
+commissioning:activityDocumentType
+    a owl:DatatypeProperty ;
+    rdfs:domain commissioning:Activity ;
+    rdfs:range xsd:string ;
+    rdfs:label "activity_Document_Type" ;
+    rdfs:comment "The type of document associated with the activity." .
+
+commissioning:activityPlannedStartDate
+    a owl:DatatypeProperty ;
+    rdfs:domain commissioning:Activity ;
+    rdfs:range ifc:IfcTimeStamp ;
+    rdfs:label "activity_Planned_Start_Date" ;
+    rdfs:comment "The planned start date of the activity." .
+
+commissioning:activityResponsibleGroup
+    a owl:DatatypeProperty ;
+    rdfs:domain commissioning:Activity ;
+    rdfs:range xsd:string ;
+    rdfs:label "activity_Responsible_Group" ;
+    rdfs:comment "The group responsible for the activity." .
+
+
+commissioning:DocumentType
+    a owl:Class ;
+    rdfs:label "activity_DocumentType" ;
+    rdfs:comment "Activity DocumentType" .
+
+commissioning:documentTypeIdentification
+    a owl:DatatypeProperty ;
+    rdfs:domain commissioning:DocumentType ;
+    rdfs:range xsd:string ;
+    rdfs:label "activity_DocumentType_Identification" ;
+    rdfs:comment "" .
+
+commissioning:documentTypeName
+    a owl:DatatypeProperty ;
+    rdfs:domain commissioning:DocumentType ;
+    rdfs:range xsd:string ;
+    rdfs:label "activity_DocumentType_Name" ;
+    rdfs:comment "" .
+
+commissioning:documentTypeDescription
+    a owl:DatatypeProperty ;
+    rdfs:domain commissioning:DocumentType ;
+    rdfs:range xsd:string ;
+    rdfs:label "activity_DocumentType_Description" ;
+    rdfs:comment "" .
+
+commissioning:Commentary
+    a owl:Class ;
+    rdfs:label "activity_Commentary" ;
+    rdfs:comment "A commentary provides details about the activity, including the creator, timestamp, and content." .
+
+commissioning:commentaryCreatorId
+    a owl:DatatypeProperty ;
+    rdfs:domain commissioning:Commentary ;
+    rdfs:range xsd:string ;
+    rdfs:label "activity_Commentary_Creator_ID" ;
+    rdfs:comment "The ID of the creator of the commentary." .
+
+commissioning:commentaryCreator
+    a owl:DatatypeProperty ;
+    rdfs:domain commissioning:Commentary ;
+    rdfs:range xsd:string ;
+    rdfs:label "activity_Commentary_Creator" ;
+    rdfs:comment "The name of the creator of the commentary." .
+
+commissioning:commentaryTimestamp
+    a owl:DatatypeProperty ;
+    rdfs:domain commissioning:Commentary ;
+    rdfs:range ifc:IfcTimeStamp ;
+    rdfs:label "activity_Commentary_Timestamp" ;
+    rdfs:comment "The timestamp of the commentary." .
+
+commissioning:commentaryContent
+    a owl:DatatypeProperty ;
+    rdfs:domain commissioning:Commentary ;
+    rdfs:range xsd:string ;
+    rdfs:label "activity_Commentary_Content" ;
+    rdfs:comment "The content of the commentary." .
+
+
+commissioning:hasElementAssociated
+    a owl:ObjectProperty ;
+    rdfs:domain commissioning:Activity ;
+    rdfs:range commissioning:Element ;
+    rdfs:label "activity_Has_Element_Associated" ;
+    rdfs:comment "Links the activity to an associated element." .
+
+
+commissioning:hasStepAssociated
+    a owl:ObjectProperty ;
+    rdfs:domain commissioning:Activity ;
+    rdfs:range commissioning:Step ;
+    rdfs:label "activity_Has_Step_Associated" ;
+    rdfs:comment "Links the activity to associated steps." .
+
+commissioning:hasCommentary
+    a owl:ObjectProperty ;
+    rdfs:domain commissioning:Activity ;
+    rdfs:range commissioning:Commentary ;
+    rdfs:label "activity_Has_Commentary" ;
+    rdfs:comment "Links the activity to its commentary." .

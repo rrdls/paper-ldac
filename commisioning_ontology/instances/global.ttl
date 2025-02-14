@@ -1,0 +1,381 @@
+@prefix commissioning: <http://example.com/certi/commissioning#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix ifc: <https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD1/OWL#> .
+
+##############################################################################
+# Instances of Digital Process Instance (DPI)
+##############################################################################
+
+commissioning:DigitalProcessInstance_1 a commissioning:DigitalProcessInstance ;
+    commissioning:dpiName "Digital Process 1" ;
+    commissioning:dpiStatus "IN_PROGRESS" ;
+    commissioning:dpiEntityType "Digital_Process" ;
+    commissioning:dpiDescription "Digital Process 1 - Description";
+    commissioning:dpiCreationTime "1732534715" ;
+    commissioning:hasProject commissioning:Project_1 ;
+    commissioning:hasClass commissioning:DigitalProcessClass_1 ;
+    commissioning:hasElementAssociated commissioning:Element_1 ;
+    commissioning:hasElementAssociated commissioning:Element_2 .
+
+##############################################################################
+# Instances of Class
+##############################################################################
+
+commissioning:DigitalProcessClass_1 a commissioning:DigitalProcessClass ;
+    commissioning:className 'MEC_CTI' ;
+    commissioning:classDescription 'Mechanical commissionable tagged item' .
+
+##############################################################################
+# Instances of Step
+##############################################################################
+
+commissioning:Step_1 a commissioning:Step ;
+    commissioning:stepName "Installation" ;
+    commissioning:stepDescription "Installation" ;
+    commissioning:stepEntityType "Step" ;
+    commissioning:hasStepSuccessor commissioning:Step_2 ;
+    commissioning:hasDigitalProcessInstance commissioning:DigitalProcessInstance_1 .
+
+commissioning:Step_2 a commissioning:Step ;
+    commissioning:stepName "Verification" ;
+    commissioning:stepEntityType "Step" ;
+    commissioning:stepDescription "Verification" ;
+    commissioning:hasStepPredecessor commissioning:Step_1 ;
+    commissioning:hasDigitalProcessInstance commissioning:DigitalProcessInstance_1 .
+
+
+##############################################################################
+# Instances of Project
+##############################################################################
+
+commissioning:Project_1 a commissioning:DigitalProcessProject ;
+    commissioning:projectName "Commissioning project - IFC validation" ;
+    commissioning:projectDescription "Example commissioning project for case study and validation of IFC files" .
+
+##############################################################################
+# Instances of Element
+##############################################################################
+
+commissioning:Element_1 a commissioning:Element ;
+    commissioning:elementName "EL001" ;
+    commissioning:elementDescription "Element ID001" ;
+    commissioning:elementEntityType "Element" ;
+    commissioning:elementType "TAG" .
+
+commissioning:Element_2 a commissioning:Element ;
+    commissioning:elementName "EL002" ;
+    commissioning:elementDescription "Element ID002" ;
+    commissioning:elementEntityType "Element" ;
+    commissioning:elementType "MESH" .
+
+##############################################################################
+# Instances of Activity
+##############################################################################
+
+commissioning:Activity_1 a commissioning:Activity ;
+    commissioning:activityName "Installation - PART 1" ;
+    commissioning:activityEntityType "Activity" ;
+    commissioning:activityDescription "Installation - PART 1" ;
+    commissioning:activityStatus "COMPLETED" ;
+    commissioning:activityDocumentType "Folha de verificação de item (FVI)" ;
+    commissioning:activityPlannedStartDate 1734647127 ;
+    commissioning:activityResponsibleGroup "Executors" ;
+    commissioning:hasElementAssociated commissioning:Element_1;
+    commissioning:hasStepAssociated commissioning:Step_1 .
+
+commissioning:Activity_2 a commissioning:Activity ;
+    commissioning:activityName "Installation - PART 2" ;
+    commissioning:activityEntityType "Activity" ;
+    commissioning:activityDescription "Installation - PART 2" ;
+    commissioning:activityStatus "IN_PROGRESS" ;
+    commissioning:activityDocumentType "Folha de verificação de item (FVI)" ;
+    commissioning:activityPlannedStartDate 1734647127 ;
+    commissioning:activityResponsibleGroup "Executors" ;
+    commissioning:hasElementAssociated commissioning:Element_2 ;
+    commissioning:hasStepAssociated commissioning:Step_1 .
+
+commissioning:Activity_3 a commissioning:Activity ;
+    commissioning:activityName "Verification - PART 1" ;
+    commissioning:activityEntityType "Activity" ;
+    commissioning:activityDescription "Verification - PART 1" ;
+    commissioning:activityStatus "IN_PROGRESS" ;
+    commissioning:activityDocumentType "Folha de verificação de item (FVI)" ;
+    commissioning:activityPlannedStartDate 1734647127 ;
+    commissioning:activityResponsibleGroup "Inspectors" ;
+    commissioning:hasElementAssociated commissioning:Element_1 ;
+    commissioning:hasStepAssociated commissioning:Step_2 .
+
+commissioning:Activity_4 a commissioning:Activity ;
+    commissioning:activityName "Verification - PART 2" ;
+    commissioning:activityEntityType "Activity" ;
+    commissioning:activityDescription "Verification - PART 2" ;
+    commissioning:activityStatus "NOT_STARTED" ;
+    commissioning:activityDocumentType "Folha de verificação de item (FVI)" ;
+    commissioning:activityPlannedStartDate 1734647127 ;
+    commissioning:activityResponsibleGroup "Inspectors" ;
+    commissioning:hasElementAssociated commissioning:Element_2 ;
+    commissioning:hasStepAssociated commissioning:Step_2 .
+
+##############################################################################
+# Instances of Pendency
+##############################################################################
+
+commissioning:Pendency1 a commissioning:Pendency ;
+    commissioning:pendencyName "Pendency 1" ;
+    commissioning:pendencyDescription "Description of Pendency 1" ;
+    commissioning:pendencyEntityType "Pendency" ;
+    commissioning:pendencyResponsiblePerson "Actor K" ;
+    commissioning:pendencyResolutionSystem "Internal" ;
+    commissioning:pendencyPublicId "PD-001" ;
+    commissioning:pendencyStatus "COMPLETED" ;
+    commissioning:pendencyType "A" ;
+    commissioning:pendencyCreationDate 1734647127 ;
+    commissioning:pendencyLimitDate 1734647127 ;
+    commissioning:pendencyUpdateDate 1734647127 ;
+    commissioning:pendencyHasElementAssociated commissioning:Element_1 ;
+    commissioning:pendencyHasTaskAssociated commissioning:Task_1 .
+
+
+commissioning:Pendency2 a commissioning:Pendency ;
+    commissioning:pendencyName "Pendency 2" ;
+    commissioning:pendencyDescription "Description of Pendency 2" ;
+    commissioning:pendencyEntityType "Pendency" ;
+    commissioning:pendencyResponsiblePerson "Actor L" ;
+    commissioning:pendencyResolutionSystem "External" ;
+    commissioning:pendencyPublicId "PD-002" ;
+    commissioning:pendencyStatus "IN_PROGRESS" ;
+    commissioning:pendencyType "B" ;
+    commissioning:pendencyCreationDate 1734647127 ;
+    commissioning:pendencyLimitDate 1734647127 ;
+    commissioning:pendencyUpdateDate 1734647127 ;
+    commissioning:pendencyHasElementAssociated commissioning:Element_2 ;
+    commissioning:pendencyHasTaskAssociated commissioning:Task_3 .
+
+
+commissioning:Pendency3 a commissioning:Pendency ;
+    commissioning:pendencyName "Pendency 3" ;
+    commissioning:pendencyDescription "Description of Pendency 3" ;
+    commissioning:pendencyEntityType "Pendency" ;
+    commissioning:pendencyResponsiblePerson "Actor J" ;
+    commissioning:pendencyResolutionSystem "Internal" ;
+    commissioning:pendencyPublicId "PD-003" ;
+    commissioning:pendencyStatus "NOT_STARTED" ;
+    commissioning:pendencyType "B" ;
+    commissioning:pendencyCreationDate 1734647127 ;
+    commissioning:pendencyLimitDate 1734647127 ;
+    commissioning:pendencyUpdateDate 1734647127 ;
+    commissioning:pendencyHasElementAssociated commissioning:Element_1 ;
+    commissioning:pendencyHasTaskAssociated commissioning:Task_6 .
+
+
+##############################################################################
+# Instances of Task
+##############################################################################
+
+commissioning:Task_1 a commissioning:Task ;
+    commissioning:taskName "Task 1" ;
+    commissioning:taskDescription "Description of Task 1" ;
+    commissioning:taskEntityType "Task" ;
+    commissioning:taskExecutingActor "Actor A" ;
+    commissioning:taskUpdateTimestamp 1734647127 ;
+    commissioning:hasActivityAssociated commissioning:Activity_1 ;
+    commissioning:hasStatus commissioning:TaskStatus_1 ;
+    commissioning:hasJustification commissioning:Justification_1 ;
+    commissioning:hasRegistry commissioning:Registry_1 ;
+    commissioning:hasEvidence commissioning:Evidence_1 ;
+    commissioning:hasElement commissioning:Element_1 .
+
+commissioning:Task_2 a commissioning:Task ;
+    commissioning:taskName "Task 2" ;
+    commissioning:taskDescription "Description of Task 2" ;
+    commissioning:taskEntityType "Task" ;
+    commissioning:taskExecutingActor "Actor B" ;
+    commissioning:taskUpdateTimestamp 1734647127 ;
+    commissioning:hasActivityAssociated commissioning:Activity_1 ;
+    commissioning:hasStatus commissioning:TaskStatus_2 ;
+    commissioning:hasJustification commissioning:Justification_1 ;
+    commissioning:hasRegistry commissioning:Registry_1 ;
+    commissioning:hasEvidence commissioning:Evidence_1 ;
+    commissioning:hasElement commissioning:Element_1 .
+
+
+commissioning:Task_3 a commissioning:Task ;
+    commissioning:taskName "Task 3" ;
+    commissioning:taskDescription "Description of Task 3" ;
+    commissioning:taskEntityType "Task" ;
+    commissioning:taskExecutingActor "Actor C" ;
+    commissioning:taskUpdateTimestamp 1734647127 ;
+    commissioning:hasActivityAssociated commissioning:Activity_2 ;
+    commissioning:hasStatus commissioning:TaskStatus_3 ;
+    commissioning:hasJustification commissioning:Justification_1 ;
+    commissioning:hasRegistry commissioning:Registry_1 ;
+    commissioning:hasEvidence commissioning:Evidence_1 ;
+    commissioning:hasElement commissioning:Element_2 .
+
+
+
+commissioning:Task_4 a commissioning:Task ;
+    commissioning:taskName "Task 4" ;
+    commissioning:taskDescription "Description of Task 4" ;
+    commissioning:taskEntityType "Task" ;
+    commissioning:taskExecutingActor "Actor D" ;
+    commissioning:taskUpdateTimestamp 1734647127 ;
+    commissioning:hasActivityAssociated commissioning:Activity_2 ;
+    commissioning:hasStatus commissioning:TaskStatus_4 ;
+    commissioning:hasJustification commissioning:Justification_1 ;
+    commissioning:hasRegistry commissioning:Registry_1 ;
+    commissioning:hasEvidence commissioning:Evidence_1 ;
+    commissioning:hasElement commissioning:Element_2 .
+
+commissioning:Task_5 a commissioning:Task ;
+    commissioning:taskName "Task 5" ;
+    commissioning:taskDescription "Description of Task 5" ;
+    commissioning:taskEntityType "Task" ;
+    commissioning:taskExecutingActor "Actor E" ;
+    commissioning:taskUpdateTimestamp 1734647127 ;
+    commissioning:hasActivityAssociated commissioning:Activity_3 ;
+    commissioning:hasStatus commissioning:TaskStatus_5 ;
+    commissioning:hasJustification commissioning:Justification_1 ;
+    commissioning:hasRegistry commissioning:Registry_1 ;
+    commissioning:hasEvidence commissioning:Evidence_1 ;
+    commissioning:hasElement commissioning:Element_1 .
+
+
+commissioning:Task_6 a commissioning:Task ;
+    commissioning:taskName "Task 6" ;
+    commissioning:taskDescription "Description of Task 6" ;
+    commissioning:taskEntityType "Task" ;
+    commissioning:taskExecutingActor "Actor F" ;
+    commissioning:taskUpdateTimestamp 1734647127 ;
+    commissioning:hasActivityAssociated commissioning:Activity_3 ;
+    commissioning:hasStatus commissioning:TaskStatus_6 ;
+    commissioning:hasJustification commissioning:Justification_1 ;
+    commissioning:hasRegistry commissioning:Registry_1 ;
+    commissioning:hasEvidence commissioning:Evidence_1 ;
+    commissioning:hasElement commissioning:Element_1 .
+
+
+commissioning:Task_7 a commissioning:Task ;
+    commissioning:taskName "Task 7" ;
+    commissioning:taskDescription "Description of Task 7" ;
+    commissioning:taskEntityType "Task" ;
+    commissioning:taskExecutingActor "Actor G" ;
+    commissioning:taskUpdateTimestamp 1734647127 ;
+    commissioning:hasActivityAssociated commissioning:Activity_4 ;
+    commissioning:hasStatus commissioning:TaskStatus_7 ;
+    commissioning:hasJustification commissioning:Justification_1 ;
+    commissioning:hasRegistry commissioning:Registry_1 ;
+    commissioning:hasEvidence commissioning:Evidence_1 ;
+    commissioning:hasElement commissioning:Element_2 .
+
+
+
+commissioning:Task_8 a commissioning:Task ;
+    commissioning:taskName "Task 8" ;
+    commissioning:taskDescription "Description of Task 8" ;
+    commissioning:taskEntityType "Task" ;
+    commissioning:taskExecutingActor "Actor H" ;
+    commissioning:taskUpdateTimestamp 1734647127 ;
+    commissioning:hasActivityAssociated commissioning:Activity_4 ;
+    commissioning:hasStatus commissioning:TaskStatus_8 ;
+    commissioning:hasJustification commissioning:Justification_1 ;
+    commissioning:hasRegistry commissioning:Registry_1 ;
+    commissioning:hasEvidence commissioning:Evidence_1 ;
+    commissioning:hasElement commissioning:Element_2 .
+
+
+##############################################################################
+# Instances of TaskStatus
+##############################################################################
+
+commissioning:TaskStatus_1 a commissioning:TaskStatus ;
+    commissioning:statusCreatorId "USR001" ;
+    commissioning:statusCreator "Actor A" ;
+    commissioning:statusTimestamp 1734647127 ;
+    commissioning:statusContent "COMPLETED" .
+
+commissioning:TaskStatus_2 a commissioning:TaskStatus ;
+    commissioning:statusCreatorId "USR002" ;
+    commissioning:statusCreator "Actor B" ;
+    commissioning:statusTimestamp 1734647127 ;
+    commissioning:statusContent "COMPLETED" .
+
+commissioning:TaskStatus_3 a commissioning:TaskStatus ;
+    commissioning:statusCreatorId "USR003" ;
+    commissioning:statusCreator "Actor C" ;
+    commissioning:statusTimestamp 1734647127 ;
+    commissioning:statusContent "IN_PROGRESS" .
+
+
+commissioning:TaskStatus_4 a commissioning:TaskStatus ;
+    commissioning:statusCreatorId "USR004" ;
+    commissioning:statusCreator "Actor D" ;
+    commissioning:statusTimestamp 1734647127 ;
+    commissioning:statusContent "NOT_STARTED" .
+
+commissioning:TaskStatus_5 a commissioning:TaskStatus ;
+    commissioning:statusCreatorId "USR005" ;
+    commissioning:statusCreator "Actor E" ;
+    commissioning:statusTimestamp 1734647127 ;
+    commissioning:statusContent "COMPLETED" .
+
+
+commissioning:TaskStatus_6 a commissioning:TaskStatus ;
+    commissioning:statusCreatorId "USR006" ;
+    commissioning:statusCreator "Actor F" ;
+    commissioning:statusTimestamp 1734647127 ;
+    commissioning:statusContent "IN_PROGRESS" .
+
+
+commissioning:TaskStatus_7 a commissioning:TaskStatus ;
+    commissioning:statusCreatorId "USR007" ;
+    commissioning:statusCreator "Actor G" ;
+    commissioning:statusTimestamp 1734647127 ;
+    commissioning:statusContent "NOT_STARTED" .
+
+
+commissioning:TaskStatus_8 a commissioning:TaskStatus ;
+    commissioning:statusCreatorId "USR008" ;
+    commissioning:statusCreator "Actor H" ;
+    commissioning:statusTimestamp 1734647127 ;
+    commissioning:statusContent "NOT_STARTED" .
+
+##############################################################################
+# Instances of Justification
+##############################################################################
+
+commissioning:Justification_1 a commissioning:Justification ;
+    commissioning:justificationCreatorId "USR001" ;
+    commissioning:justificationCreator "Actor A" ;
+    commissioning:justificationTimestamp "1734647127"^^ifc:IfcTimeStamp ;
+    commissioning:justificationContent "Justification for Task 1." .
+
+##############################################################################
+# Instances of Registry
+##############################################################################
+
+commissioning:Registry_1 a commissioning:Registry ;
+    commissioning:registryCreatorId "USR001" ;
+    commissioning:registryCreator "Actor A" ;
+    commissioning:registryTimestamp "1734647127"^^ifc:IfcTimeStamp ;
+    commissioning:registryContent "Initial record of Task 1." .
+
+##############################################################################
+# Instances of Evidence
+##############################################################################
+
+commissioning:Evidence_1 a commissioning:Evidence ;
+    commissioning:evidenceCreatorId "USR001" ;
+    commissioning:evidenceCreator "Actor A" ;
+    commissioning:evidenceTimestamp "1734647127"^^ifc:IfcTimeStamp ;
+    commissioning:evidenceContent "Initial evidence of Task 1." .
+
+##############################################################################
+# Instances of Commentary
+##############################################################################
+
+commissioning:Commentary_1 a commissioning:Commentary ;
+    commissioning:commentaryCreatorId "USR001" ;
+    commissioning:commentaryCreator "Actor B" ;
+    commissioning:commentaryTimestamp "1734647127"^^ifc:IfcTimeStamp ;
+    commissioning:commentaryContent "Initial commentary of Task 1." .
